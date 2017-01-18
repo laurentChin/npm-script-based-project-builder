@@ -12,6 +12,9 @@
     "postbuild:css": "rm dist/styles.scss",
     "prebuild": "rimraf dist && mkdir -p dist",
     "build": "concurrently \"npm run build:js\" \"npm run build:css\"",
+    "watch:js": "chokidar 'sources/**/*.js' -c 'npm run build:js'",
+    "watch:css": "chokidar 'sources/**/*.scss' -c 'npm run build:css'",
+    "watch": "concurrently \"npm run watch:js\" \"npm run watch:css\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +28,7 @@
   },
   "homepage": "https://github.com/laurentChin/npm-script-based-project-builder#readme",
   "devDependencies": {
+    "chokidar-cli": "^1.2.0",
     "concurrently": "^3.1.0",
     "globcat": "^1.0.2",
     "rimraf": "^2.5.4",
