@@ -1,0 +1,19 @@
+{
+  "name": "npm-script-based-project-builder",
+  "version": "1.0.0",
+  "description": "An npm script only based project builder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurentChin/npm-script-based-project-builder.git"
+  },
+  "author": "Laurent Janet <laurent.janet@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/laurentChin/npm-script-based-project-builder/issues"
+  },
+  "homepage": "https://github.com/laurentChin/npm-script-based-project-builder#readme"
+}
