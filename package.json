@@ -7,8 +7,11 @@
     "concat:js": "globcat sources/**/*.js > dist/package.js",
     "postconcat:js": "uglifyjs dist/package.js -o dist/package.min.js --mangle --compress --screw-ie8",
     "build:js": "npm run concat:js",
+    "prebuild:css": "globcat sources/**/*.scss > dist/styles.scss",
+    "build:css": "cat dist/styles.scss | node-sass > dist/styles.css",
+    "postbuild:css": "rm dist/styles.scss",
     "prebuild": "rimraf dist && mkdir -p dist",
-    "build": "npm run build:js",
+    "build": "npm run build:js && npm run build:css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
