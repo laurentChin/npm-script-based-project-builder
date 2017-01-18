@@ -4,7 +4,7 @@
   "description": "An npm script only based project builder",
   "main": "index.js",
   "scripts": {
-    "concat:js": "concat-cli -f sources/**/*.js -o dist/package.js",
+    "concat:js": "globcat sources/**/*.js > dist/package.js",
     "postconcat:js": "uglifyjs dist/package.js -o dist/package.min.js --mangle --compress --screw-ie8",
     "build:js": "npm run concat:js",
     "prebuild": "rimraf dist && mkdir -p dist",
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/laurentChin/npm-script-based-project-builder#readme",
   "devDependencies": {
-    "concat-cli": "^4.0.0",
+    "globcat": "^1.0.2",
     "rimraf": "^2.5.4",
     "uglify-js": "^2.7.5"
   }
