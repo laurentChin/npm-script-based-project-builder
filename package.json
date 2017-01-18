@@ -11,7 +11,7 @@
     "build:css": "cat dist/styles.scss | node-sass > dist/styles.css",
     "postbuild:css": "rm dist/styles.scss",
     "prebuild": "rimraf dist && mkdir -p dist",
-    "build": "npm run build:js && npm run build:css",
+    "build": "concurrently \"npm run build:js\" \"npm run build:css\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/laurentChin/npm-script-based-project-builder#readme",
   "devDependencies": {
+    "concurrently": "^3.1.0",
     "globcat": "^1.0.2",
     "rimraf": "^2.5.4",
     "uglify-js": "^2.7.5"
