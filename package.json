@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "concat:js": "concat-cli -f sources/**/*.js -o dist/package.js",
-    "build:js": "npm run concat:js && uglifyjs dist/package.js -o dist/package.min.js --mangle --compress --screw-ie8",
+    "postconcat:js": "uglifyjs dist/package.js -o dist/package.min.js --mangle --compress --screw-ie8",
+    "build:js": "npm run concat:js",
     "prebuild": "rimraf dist && mkdir -p dist",
     "build": "npm run build:js",
     "test": "echo \"Error: no test specified\" && exit 1"
